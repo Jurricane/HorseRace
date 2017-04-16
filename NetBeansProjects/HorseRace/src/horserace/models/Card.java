@@ -21,6 +21,16 @@ public class Card {
         this.value = value;
     }
 
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public String getValue() {
+        return value;
+    }
+    
+    
+
     @Override
     public String toString() {
         return (this.value + " " + this.symbol);
