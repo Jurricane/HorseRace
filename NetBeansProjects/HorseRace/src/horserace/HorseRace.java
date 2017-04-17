@@ -20,8 +20,8 @@ public class HorseRace {
     public static void main(String[] args) {
         
         Game game = new Game();
-        System.out.println(game.getStack());
-        System.out.println(game.getRaceTrack());
+        //System.out.println(game.getStack());
+        //System.out.println(game.getRaceTrack());
     }
     
 }
