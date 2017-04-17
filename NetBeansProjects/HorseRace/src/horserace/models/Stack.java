@@ -28,6 +28,7 @@ public class Stack {
     private void fillWithShuffledCards() {
         this.cards = new ArrayList<>(new Deck().getCards());
         Collections.shuffle(cards);
+        Collections.shuffle(cards);
     }
     
     public ArrayList<Card> getCards() {
