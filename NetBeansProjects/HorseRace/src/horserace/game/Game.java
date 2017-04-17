@@ -60,10 +60,7 @@ public class Game {
     }
 
     public void signalNextTurn() {
-//        System.out.println(spadePos + "/" + trackLength
-//                + "  " + heartPos + "/" + trackLength + "  "
-//                + clubsPos + "/" + trackLength + "  " + diamoPos
-//                + "/" + trackLength + "  " + stack.getCards().get(turn));
+        
         System.out.println("turn " + turn + ", next turn? ");
         this.input = new Scanner(System.in);
         if (input.hasNext()) {
@@ -75,6 +72,7 @@ public class Game {
      * Will be called every time the game advances 1 turn.
      */
     public void nextTurn() {
+        
         Card nextCard = stack.getCards().get(turn);
         switch (nextCard.getSymbol()) {
             case "Spades":
@@ -94,10 +92,7 @@ public class Game {
                 break;
         }
         System.out.println(stack.getCards().get(turn));
-        System.out.println(spadePos + "/" + trackLength
-                + "  " + heartPos + "/" + trackLength + "  "
-                + clubsPos + "/" + trackLength + "  " + diamoPos
-                + "/" + trackLength);
+        printStatus();
 
         if (spadePos > trackLength || heartPos > trackLength || clubsPos > trackLength || diamoPos > trackLength) {
             finishGame();
@@ -125,10 +120,7 @@ public class Game {
                         break;
                 }
                 System.out.println(trackCard);
-                System.out.println(spadePos + "/" + trackLength
-                + "  " + heartPos + "/" + trackLength + "  "
-                + clubsPos + "/" + trackLength + "  " + diamoPos
-                + "/" + trackLength);
+                printStatus();
                 minPos++;
             }
 
@@ -139,12 +131,19 @@ public class Game {
             signalNextTurn();
         }
     }
-
-    public void finishGame() {
+    
+    public void printStatus() {
+        
         System.out.println(spadePos + "/" + trackLength
                 + "  " + heartPos + "/" + trackLength + "  "
                 + clubsPos + "/" + trackLength + "  " + diamoPos
                 + "/" + trackLength);
+                System.out.println(" S    H    C    D");
+    }
+
+    public void finishGame() {
+        
+        printStatus();
         System.out.println("new game? ");
         this.input = new Scanner(System.in);
 //        if (input.hasNext()) {
