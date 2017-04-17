@@ -143,7 +143,6 @@ public class Game {
 
     public void finishGame() {
         
-        printStatus();
         System.out.println("new game? ");
         this.input = new Scanner(System.in);
 //        if (input.hasNext()) {
